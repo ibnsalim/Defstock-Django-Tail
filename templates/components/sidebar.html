@@ -1,0 +1,45 @@
+
+  <div class="divide-y divide-gray-300">
+    {% comment %} Sidebar Start {% endcomment %}
+    <div class="px-4 py-3">
+      <ul class="list-none">
+        <p class="py-1 hover:bg-gray-200 hover:rounded-sm hover:text-green-600 hover:cursor-pointer">
+          Recommended Blog
+        </p>
+        <p class="py-1 hover:bg-gray-200 hover:rounded-sm hover:text-green-600 hover:cursor-pointer">
+          All Categories
+        </p>
+        <p
+          class="py-1 hover:bg-gray-200 hover:rounded-sm hover:text-green-600 hover:cursor-pointer">
+          All Authors
+        </p>
+
+        <a href="{% url 'blogs' %}" class="py-1 block hover:bg-gray-200 hover:rounded-sm hover:text-green-600 hover:cursor-pointer">
+          All Blogs
+        </a>
+
+      </ul>
+    </div>
+
+    <div class="px-1 py-3 flex flex-col gap-2">
+      <div>
+        <input 
+        type="text" 
+        placeholder="Find our blog..." 
+        class="p-1 pl-2 border border-gray-400 rounded-sm focus:outline-none bg-gray-50"/>
+      </div>
+
+      <div>
+        {% for category in categories|slice:'30' %}
+        <a href="{% url 'category_blogs' category.slug %}">
+          <div
+            class="inline-block bg-gray-400/25 font-[roboto] text-[15px] rounded-md px-2 py-1 hover:bg-red-500 hover:text-white hover:cursor-pointer m-[2px]">
+            {{ category.title|title }}
+          </div></a>
+        {% endfor %}
+      </div>
+      
+    </div>
+
+    {% comment %} Social Media icons {% endcomment %}
+  </div>

@@ -1,0 +1,61 @@
+
+<div>
+  <div class="w-auto h-auto p-3 bg-white mt-5">
+    <div class="col-span-2 divide-y space-y-1.5">
+      <div class="flex items-center">
+        <div class="w-[3px] h-5 bg-red-500 "></div>
+        <h1
+          class="font-bold text-[22px] font-[roboto] text-gray-800 pl-2 hover:text-black hover:cursor-pointer">
+          Nano Technology
+        </h1>
+      </div>
+
+      <div class="mb-10">
+        <div
+          class="relative rounded-b-sm w-auto h-auto pb-1 grid grid-cols-4 gap-2">
+
+          {% for blog in blogs|slice:'8' %}
+          <div
+            key="{i}"
+            class=" hover:drop-shadow-sm ring-1 ring-gray-200 hover:cursor-pointer">
+            <div>
+              <div
+                class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                <img src="{{ blog.banner.url }}" alt="" class="w-full h-40" />
+                <a href="/">
+                  <div
+                    class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="pl-2 pt-3">
+              <div class="flex items-center">
+                <div class="w-[2.5px] h-3 bg-red-500 "></div>
+                <p
+                  class="font-[roboto] text-[12px] hover:underline text-gray-500 hover:cursor-pointer m-[2px] uppercase pl-0.5"
+                >
+                {{ blog.category }}
+                </p>
+              </div>
+              <h5
+                class="font-bold text-lg my-1 font-[roboto] hover:cursor-pointer text-gray-900 hover:text-red-500">
+                {{blog.title|truncatewords:'10'}}
+              </h5>
+              <div class="text-gray-500 mb-2 flex">
+                <p class="pr-1.5">{{blog.created_date}}</p>
+                <p class="pl-1.5 border-l border-gray-400">
+                <a href="/">{{blog.user}}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

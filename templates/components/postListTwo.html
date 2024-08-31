@@ -1,0 +1,50 @@
+
+
+<div class='mt-4'>
+    <div class='w-auto h-auto p-3 bg-white'>
+        <div class='flex items-center'>
+            <div class='w-[3px] h-5 bg-red-500 '></div>
+            <h1 class="font-bold text-[22px] font-[roboto] text-gray-800 pl-1.5 hover:text-black hover:cursor-pointer">Artificial Intelligence</h1>
+        </div>
+
+        <div class='grid grid-cols-5 gap-2 mt-2'>
+
+            {% comment %} Post-1  {% endcomment %}
+            {% for blog in blogs|slice:'1' %}
+            <div class='row-span-4 col-span-2'>
+                <a href="{% url 'blog_details' blog.slug %}">
+                <div class="overflow-hidden bg-no-repeat bg-cover">
+                    <img src={{ blog.banner.url }} alt='' class='w-auto' />
+                    <div>
+                        <h1 class="font-bold text-xl font-[roboto] mt-2 hover:cursor-pointer text-gray-900 hover:text-red-500">{{ blog.title }}</h1>
+                        <small>{{ blog.user }}</small>
+                        <p class='mt-1.5 overflow-hidden'>{{ blog.description|truncatewords:'15'}}</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+                
+            {% comment %} Part-2 {% endcomment %}
+            
+            {% for blog in blogs|slice:'4' %}
+            <div class=' col-span-2 divide-y space-y-1.5'>
+                <div class='overflow-hidden bg-no-repeat bg-cover flex'>
+                    <img src={{ blog.banner.url }} alt='Robot imag' class='w-32 h-20' />
+                    <div class='ml-1.5'>
+                        <h1 class="font-semibold text-md font-[roboto] hover:cursor-pointer text-gray-900 hover:text-red-500">{{blog.title}}</h1>
+                    <small class='font-[roboto] text-gray-500'>{{blog.created_date}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class='col-span-1'>
+                <div class='w-full h-full bg-gray-300 ring-1 ring-gray-400/50 flex justify-center items-center'>
+                    <p class=''>Google Ads</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

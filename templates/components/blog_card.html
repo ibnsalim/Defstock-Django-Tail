@@ -1,0 +1,33 @@
+
+
+<div class="w-full ">
+  
+    <div class="flex space-x-4 pt-4 pb-4 border-b-2">
+      <div class=" overflow-hidden bg-cover bg-no-repeat">
+        <img
+            class="w-auto h-28 "
+          src="{{ blog.banner.url }}"
+          alt="PostCategoryImage"/>
+      </div>
+
+      <div>
+        <div class="flex space-x-2">
+          <p class="sm:text-[11px] md:text-[12px] hover: hover:cursor-pointer font-bold text-red-700">
+            {{ blog.category.title }}
+          </p>
+          <p class="text-gray-600 text-sm text-[13px]">
+            {{ blog.created_date }}
+          </p>
+        </div>
+        <div>
+          <h1
+            class="font-bold  mt-0.5 hover:cursor-pointer text-gray-900 hover:underline">
+            {{ blog.title }}
+          </h1>
+          <p class="text-sm text-gray-500">
+            {{ blog.description|truncatewords:8 }}
+          </p>
+        </div>
+      </div>
+    </div>
+</div>

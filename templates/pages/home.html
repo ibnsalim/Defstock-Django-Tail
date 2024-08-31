@@ -1,0 +1,67 @@
+{% extends "../base.html" %}
+
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+  <div class='grid grid-cols-5 gap-x-2 divide-x py-2 '>
+
+    {% comment %} Sidebar  {% endcomment %}
+    <div class="grid-cols-none md:col-span-1">{% include "../components/sidebar.html" %}</div>
+
+    {% comment %} Main Portion {% endcomment %}
+    <div class="col-span-4 pt-5">
+
+      {% include "../components/postListOne.html" %}
+      {% include "../components/postListTwo.html" %}
+      {% include "../components/postListThree.html" %}
+      {% include "../components/postListFour.html" %}
+      
+      {% comment %} Shoe more related Posts {% endcomment %}
+      <div class='mt-8 flex justify-center items-center '>
+        <button class='w-80 rounded-md font-medium text-center py-2  mt-2 mb-8 bg-red-500 text-slate-100 hover:shadow-lg hover:text-white'>Show More Related Posts</button>
+      </div>
+
+      {% comment %} Trending Categories {% endcomment %}
+      <div class='border-b border-gray-300 mt-3'></div>
+        <div class='ml-3 mt-2'>
+          <h1 class='text-lg font-bold font-[roboto] text-gray-800'>Trending Categories</h1>
+          <div class='mt-1.5 grid grid-cols-5'>
+
+            {% for category in categories %}
+            <a href="{% url 'category_blogs' category.slug %}">
+                <div class='inline-block bg-gray-400/25 font-[roboto] text-[15px] rounded-md px-2 py-1 hover:bg-red-500 hover:text-white hover:cursor-pointer m-[2px]' >{{ category.title }}</div>
+            </a>
+            {% endfor %}
+
+          </div>
+        </div>
+
+
+      {% comment %} Trending Author {% endcomment %}
+      <div class='border-b border-gray-300 mt-3'></div>
+      <div class='ml-3 mt-2'>
+        <h1 class='text-lg font-bold font-[roboto] text-gray-800'>Trending Author</h1>
+        <div class='mt-2 grid grid-cols-6 gap-x-3 gap-y-5'>
+
+            {% for blog in blogs %}
+            <div class='w-auto'>
+              <a href="#">
+                <div class="relative overflow-hidden bg-no-repeat bg-cover ring ring-gray-500 rounded-md" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                    <img src="{{ blog.banner.url }}" alt='' class="w-full h-28" />
+                </div>
+
+                <div class=' mt-1 '>
+                    <p class='block text-center text-md font-medium text-gray-700 font-[roboto]'>{{ blog.user.username }}</p>
+                    <p class='block text-center text-normal font-normal text-gray-500 font-[roboto]'>{{ blog.count }}</p>
+                </div>
+              </a>
+            </div>       
+            {% endfor %}
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+{% endblock content %}

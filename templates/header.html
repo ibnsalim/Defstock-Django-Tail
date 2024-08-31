@@ -1,0 +1,86 @@
+
+<div class='bg-white '>
+    <div class='max-w-full max-h-auto mx-auto border-b border-gray-200'>
+        <div class='2xl:max-w-7xl xl:max-w-6xl md:max-w-5xl mx-auto'>
+
+            <div class='w-full flex justify-center items-center'>
+                <div class='p-1'>
+                    <a href='/' class=' font-bold font-[roboto] tracking-wider text-gray-800 p-2 text-4xl'>Def<span class='text-green-600 '>Stock</span></a>
+            </div>
+
+        </div>
+
+        {% comment %} Nav Manu {% endcomment %}
+        <div class='sticky top-0 z-50'>
+          <nav class='shadow-sm shadow-gray-300/50'>
+            <div>
+              <ul class='flex justify-center'>
+                
+                <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                    <a href="{% url "home" %}" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Home</a>
+                </li>
+
+                <div class="relative text-left group">
+                    <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                        <a href="" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Agriculture</a>
+                    </li>
+
+                    <div class="absolute z-10 w-[500px] bg-white shadow-lg ring-1 ring-gray-900 ring-opacity-5 focus:outline-none scale-y-0 group-hover:scale-y-100 origin-top duration-500" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+
+                        <div class="py-1 grid grid-cols-2 divide-x-2 space-x-1 " role="none">
+                            {% comment %} Part-1 (Departments) {% endcomment %}
+                            <div class="p-2">
+                                <h4 class="text-md font-bold text-gray-950">Departments</h4>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Agronomy</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Horticulture</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Agri. Chemistry</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Soil Science</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Plant Pathology</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Entomology</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Crop Botany</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Biochemistry</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Biotechnology</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Genetics & Plant Breeding</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Statistics</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Agri. Economics</a>
+                                <a href="#" class="block px-1 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0"></a>
+                            </div>
+
+                            {% comment %} Part-2 (Hot Topics) {% endcomment %}
+                            <div class="p-2">
+                                <h4 class="text-md font-bold text-gray-950">Hot Topics</h4>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Nanotechnology</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Sustainable Agriculture</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Circular Food System</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Sattalite imaging</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Agricultural Mechanization</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Agri. Business</a>
+                                <a href="#" class="block px-2 py-1 hover:underline text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Bangladesh Statistics</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                    <a href="" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Technology</a>
+                </li>
+                <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                    <a href="" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Food</a>
+                </li>
+                <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                    <a href="" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Environment</a>
+                </li>
+                <li class='flex py-3 px-3 hover:bg-gray-300/40 text-gray-900 hover:text-black hover:cursor-pointer '>
+                    <a href="" class='pl-1 font-[roboto] text-[15px] font-normal tracking-wide'>Health</a>
+                </li>
+                
+              </ul>
+            </div>        
+          </nav>
+
+          </div>
+
+    </div>
+        
+</div>
+</div>

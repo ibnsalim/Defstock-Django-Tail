@@ -1,0 +1,76 @@
+
+  <section class="w-auto h-auto p-3 shadow-sm bg-white">
+    {% for blog in blogs|slice:'1' %}
+    <div class="grid grid-cols-4 gap-2">
+      <div class="row-span-2 col-span-2">
+        <a href="{% url 'blog_details' blog.slug %}">
+          <div
+            class="relative overflow-hidden bg-no-repeat bg-cover hover:brightness-105"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+          >
+            <img src="{{ blog.banner.url }}" alt="img1" class="w-full h-auto bg-gray-900" />
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-40"></div>
+            <a href="/">
+              <div
+                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+              >
+                <div class="flex justify-start items-end h-full">
+                  <div class="text-white m-6">
+                    <h1 class="font-normal text-2xl mb-3 font-[roboto]">
+                      {{ blog.title }}
+                    </h1>
+
+                    <div class="flex items-center">
+                      <div class="w-[2.5px] h-3 bg-red-500"></div>
+                      <p class="font-[roboto] text-[12px] hover:underline text-gray-200 hover:cursor-pointer m-[2px] uppercase pl-1">
+                        {{ blog.category.title }}
+                        
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </a>
+      </div>
+
+      {% comment %} Small Image Post-1 {% endcomment %}
+      {% for blog in blogs|slice:'4' %}
+      <div class="grid grid-cols grid-rows">
+        <a href="{% url 'blog_details' blog.slug %}">
+          <div
+            class="relative overflow-hidden bg-no-repeat bg-cover hover:brightness-105"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+          >
+            <img src="{{ blog.banner.url }}" alt="img1" class="w-full h-auto bg-gray-900" />
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-40"></div>
+            <a href="/">
+              <div
+                class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
+                <div class="flex justify-start items-end h-full">
+                  <div class="text-white m-6">
+                    <h5 class="font-normal text-[16px] mb-2 font-[roboto]">
+                      {{blog.title}}
+                    </h5>
+                    <div class="flex items-center"> 
+                      <div class="w-[2.5px] h-3 bg-red-500"></div>
+                      <p
+                        class="font-[roboto] text-[12px] hover:underline text-gray-200 hover:cursor-pointer m-[2px] uppercase pl-1">
+                        {{ blog.category.title }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+

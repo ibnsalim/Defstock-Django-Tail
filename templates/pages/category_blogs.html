@@ -1,0 +1,26 @@
+{% extends "../base.html" %}
+
+
+{% block title %}{{ category.title }}{% endblock title %}
+
+{% block content %}
+<div class='mt-5'>
+    <h2 class='text-3xl font-bold text-gray-900 '>Cricket{{ category.title|title }} {{ blog.count }}</h2>
+    <hr class="border-1 w-2/3" />
+    <div class='gap-x-3'>
+      
+      <div class='gap-0.5 '>
+        <div class=" border rounded-sm border-gray-300 px-4 mt-2.5">
+        {% for blog in blogs %}
+        {% include "../components/blog_card.html" %}
+        {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="">
+      {% include "../components/pagination.html" %}
+    </div>
+</div>
+  {% endblock content %}

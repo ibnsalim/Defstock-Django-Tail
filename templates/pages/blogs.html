@@ -1,0 +1,16 @@
+{% extends "../base.html" %}
+
+{% block title %}All blogs{% endblock title %}
+{% load static %}
+
+{% block content %}
+
+    {% for blog in blogs %}
+    <div>
+        {% include "../components/blog_card.html" %}
+    </div>
+    {% endfor %}
+
+
+{% endblock content %}
+

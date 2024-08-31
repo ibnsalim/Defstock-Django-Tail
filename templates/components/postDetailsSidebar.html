@@ -1,0 +1,43 @@
+
+<div>
+    <div className='mx-8 mt-7'>
+         {% comment %} Related Topics Section  {% endcomment %}
+        <h1 className='text-2xl font-bold text-gray-800 mb-2'>Related Topics</h1>
+        <div className='mt-1.5'>
+
+            {% for blog in related_blogs %}                     
+                <div className='inline-block bg-gray-400/25 font-[roboto] text-[15px] rounded-sm px-2 py-1 hover:bg-red-500 hover:text-white hover:cursor-pointer m-[3px] hover:transition-all' >{{ blog.category.title }}</div>
+            {% endfor %} 
+        </div>
+    </div>
+    
+     {% comment %} Popular Blogs Section  {% endcomment %}
+    <div className='mx-8 mt-8'>
+    <h1 className='text-2xl font-bold text-gray-800 mb-2'>Related Blogs</h1>
+    <div className='divide-y divide-gray-400/50 mt-3 '>
+        {% for blog in related_blogs %}  
+        <div className='mb-2'>
+            <p className='text-lg text-gray-700 font-medium mt-1 hover:text-red-500 hover:cursor-pointer'>{{ blog.title }}</p>
+            <small className='text-gray-500'>{{blog.created_date}}</small>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+
+     {% comment %} Latest Blogs Section  {% endcomment %}
+    <div className='mx-8 mt-8'>
+    <h1 className='text-2xl font-bold text-gray-800 mb-2'>Most Read Blogs</h1>
+    <div className='divide-y divide-gray-400/50 mt-3 '>
+        {
+            FullArray.map((popular)=>(
+                <div className='mb-2'>
+                    <p className='text-lg text-gray-700 font-medium mt-1 hover:text-red-500 hover:cursor-pointer'>{popular.title}</p>
+                    <small className='text-gray-500'>{popular.date}</small>
+                </div>
+
+            ))
+        }
+    </div>
+    </div>
+
+</div>
